@@ -5,7 +5,7 @@ public class Main {
         int capacity;
         try{
             System.out.println("Please enter the capacity: ");
-            capacity = sc.nextInt();
+            capacity = Integer.parseInt(sc.nextLine().trim());
             if(capacity <= 0){
                 throw new NumberFormatException();
             }
@@ -16,7 +16,7 @@ public class Main {
         ParkingLot PL = new ParkingLot(capacity);
         System.out.println("Parking lot created with capacity: " + capacity);
 
-        String choice = sc.nextLine();
+        String choice = "";
 
         while(!choice.equals("5")){
 
@@ -51,7 +51,7 @@ public class Main {
         }
  
         System.out.print("Plate number: ");
-        String plate = sc.nextLine().trim();
+        String plate = sc.nextLine().trim().toUpperCase();
         if (plate.isEmpty()){
             System.out.println("Plate cannot be empty.");
             return;
